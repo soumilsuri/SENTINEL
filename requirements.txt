@@ -7,3 +7,4 @@ tqdm
 webdriver_manager
 regex
 transformers
+streamlit
