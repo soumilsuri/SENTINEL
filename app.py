@@ -142,26 +142,27 @@ elif page == "Analysis Results":
 
     try:
         # Read the summaries
-        with open("summaries.txt", "r") as f:
+        with open("summaries.txt", "r", encoding='utf-8') as f:
             summaries = f.read().split("\n\n")
 
         # Read the URLs and titles
-        with open("Heading.txt", "r") as f:
+        with open("heading.txt", "r", encoding='utf-8') as f:
             headings = f.read().split("\n\n")
 
         # Create a list to store the data
         data = []
 
         for summary, heading in zip(summaries, headings):
-            title = heading.split("\n")[1].replace("Heading: ", "")
-            url = heading.split("\n")[0].replace("Link: ", "")
-            summary_text = summary.split("\n", 1)[1] if "\n" in summary else ""
-            data.append({"Title": title, "URL": url, "Summary": summary_text})
+            heading_lines = heading.split("\n")
+            if len(heading_lines) >= 2:
+                url = heading_lines[0].replace("Link: ", "")
+                title = heading_lines[1].replace("Heading: ", "")
+                summary_text = summary.split("\n", 1)[1] if "\n" in summary else ""
+                data.append({"Title": title, "URL": url, "Summary": summary_text})
 
         # Create a DataFrame
         df = pd.DataFrame(data)
 
-        # Download button at the top
         # Download button at the top
         if not df.empty:
             output = BytesIO()
