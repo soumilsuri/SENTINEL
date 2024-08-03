@@ -4,6 +4,12 @@ Sure! Here's the entire README content within a single code block:
 
 SENTINEL is a Streamlit-based application for visualizing and monitoring news articles. This README provides instructions to clone the repository, install the required dependencies, and run the application.
 
+![Input](images/input.png)
+
+
+
+![result](images/result.png)
+
 ## Getting Started
 
 ### Prerequisites
