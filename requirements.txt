@@ -5,3 +5,5 @@ selenium
 unstructured
 tqdm
 webdriver_manager
+regex
+transformers
