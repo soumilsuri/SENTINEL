@@ -1,6 +1,6 @@
 aiohttp
 asyncio
-BeautifulSoup
+BeautifulSoup4
 selenium
 unstructured
 tqdm
